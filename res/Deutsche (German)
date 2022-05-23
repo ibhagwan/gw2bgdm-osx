@@ -1,0 +1,512 @@
+﻿[Localization]
+TEXT_LANGUAGE=Deutsch	
+TEXT_GLOBAL_YES=Ja
+TEXT_GLOBAL_NO=Nein
+TEXT_GLOBAL_ENABLED=Aktiviert
+TEXT_GLOBAL_DISABLED=Deaktiviert
+TEXT_GLOBAL_ALL=Alle
+TEXT_GLOBAL_NONE=Keine
+TEXT_GLOBAL_NONE_CAPS=KEINE
+TEXT_GLOBAL_DEFAULT=Standard
+TEXT_GLOBAL_WVW=WvW
+TEXT_GLOBAL_MIN=Min
+TEXT_GLOBAL_MAX=Max
+TEXT_GLOBAL_ADD=Hinzufügen
+TEXT_GLOBAL_REMOVE=Entfernen
+TEXT_GLOBAL_REMOVE_SEL=Auswahl Entfernen
+TEXT_GLOBAL_REVERT=Rückgängig
+TEXT_GLOBAL_RESTORE_DEF=Standard wiederherstellen
+TEXT_GLOBAL_OPTIONS=Optionen
+TEXT_GLOBAL_COLUMNS=Spalten
+TEXT_GLOBAL_HIDE=Verstecken
+TEXT_GLOBAL_INT=Integer
+TEXT_GLOBAL_FLOAT=Gleitkommazahl
+TEXT_GLOBAL_FIXED=Fixiert
+TEXT_GLOBAL_DYNAMIC=Dynamisch
+TEXT_GLOBAL_ICON=Icon
+TEXT_GLOBAL_FONT=Schriftart
+TEXT_GLOBAL_FONT_SMALL=Winzig
+TEXT_GLOBAL_FONT_NORMAL=Normal
+TEXT_GLOBAL_COMPASS=Kompass
+TEXT_GLOBAL_COLOR=Farbe
+TEXT_GLOBAL_COLORPICK_RGB=RGB
+TEXT_GLOBAL_COLORPICK_HSV=HSV
+TEXT_GLOBAL_COLORPICK_HEX=HEX
+TEXT_GLOBAL_COLORPICK_MODE=Farbwahlmodus
+TEXT_GLOBAL_COLORPICK_MODE_HELP=Legt die Farbauswahlbox fest.
+TEXT_GLOBAL_COLORPICK_HELP=<<<END_OF_TEXT
+Rechtsklick auf Farbbutton
+öffnet die Farbauswahlbox.
+END_OF_TEXT
+TEXT_COL_TEXT=Text
+TEXT_COL_TEXT_DISABLED=Text deaktiviert
+TEXT_COL_TEXT_1=Text Panel #1
+TEXT_COL_TEXT_2=Text Panel #2
+TEXT_COL_TEXT_3=Text Panel #3
+TEXT_COL_TEXT_PLAYER=Text Spieler
+TEXT_COL_TEXT_PLAYER_SELF=Text Spieler (selbst)
+TEXT_COL_TEXT_PLAYER_DEAD=Text Spieler (tot)
+TEXT_COL_TEXT_TARGET=Text Ziel
+TEXT_COL_TEXT_BORDER_TLOCK=Rahmen (fixiertes Ziel)
+TEXT_COL_TEXT_BORDER_LINES=Rahmen (Linien)
+TEXT_COL_TEXT_WINDOW_BG=Fenster BG
+TEXT_COL_TEXT_POPUP_BG=Popup BG
+TEXT_COL_TEXT_FRAME_BG=Rahmen BG 
+TEXT_COL_TEXT_FRAME_BG_ACTIVE=Rahmen BG(aktiv)
+TEXT_COL_TEXT_FRAME_BG_HOVER=Rahmen BG(Mouseover)
+TEXT_COL_TEXT_TITLE_BG=Titel BG
+TEXT_COL_TEXT_TITLE_BG_COLLAPSED=Titel BG (minimiert)
+TEXT_COL_TEXT_TITLE_BG_ACTIVE=Titel BG (aktiv)
+TEXT_COL_TEXT_MENUBAR_BG=Menüleiste BG
+TEXT_COL_TEXT_COMBO_BG=Combobox BG
+TEXT_COL_TEXT_SCROLL_BG=Scrollleiste BG
+TEXT_COL_TEXT_SCROLL_GRAB=Scrollleiste, Anfasser
+TEXT_COL_TEXT_SCROLL_GRAB_HOVER=<<<END_OF_TEXT
+Scrollleiste, Anfasser
+(Mouseover)
+END_OF_TEXT
+TEXT_COL_TEXT_SCROLL_GRAB_ACTIVE=<<<END_OF_TEXT
+Scrollleiste, Anfasser
+(aktiv)
+END_OF_TEXT
+TEXT_COL_TEXT_SLIDER_GRAB=Slider, Anfasser
+TEXT_COL_TEXT_SLIDER_GRAB_ACTIVE=<<<END_OF_TEXT
+Slider, Anfasser
+(aktiv)
+END_OF_TEXT
+TEXT_COL_TEXT_BUTTON=Knopf
+TEXT_COL_TEXT_BUTTON_ACTIVE=Knopf (aktiv)
+TEXT_COL_TEXT_BUTTON_HOVER=Knopf (Mouseover)
+TEXT_COL_TEXT_HEADER=Titelleiste
+TEXT_COL_TEXT_HEADER_ACTIVE=Titelleiste (aktiv)
+TEXT_COL_TEXT_HEADER_HOVER=Titelleiste (Mouseover)
+TEXT_COL_TEXT_COLUMN=Spalten
+TEXT_COL_TEXT_COLUMN_ACTIVE=Spalte (aktiv)
+TEXT_COL_TEXT_COLUMN_HOVER=Spalte (Mouseover)
+TEXT_COL_TEXT_RESIZE=Größenänderung, Anfasser
+TEXT_COL_TEXT_RESIZE_ACTIVE=<<<END_OF_TEXT
+Größenänderung, Anfasser
+(aktiv)
+END_OF_TEXT
+TEXT_COL_TEXT_RESIZE_HOVER=<<<END_OF_TEXT
+Größenänderung, Anfasser
+(Mouseover)
+END_OF_TEXT
+TEXT_COL_TEXT_CLOSE_BTN=Schließen-Knopf
+TEXT_COL_TEXT_CLOSE_BTN_ACTIVE=Schließen-Knopf (aktiv)
+TEXT_COL_TEXT_CLOSE_BTN_HOVER=<<<END_OF_TEXT
+Schließen-Knopf
+(Mouseover)
+END_OF_TEXT
+TEXT_COL_TEXT_PLOTLINES=Plotlinien
+TEXT_COL_TEXT_PLOTLINES_ACTIVE=Plotlinien (Mouseover)
+TEXT_COL_GRADIENT_START=Verlaufsstart Hintergrund
+TEXT_COL_GRADIENT_END=Verlaufsende Hintergrund
+TEXT_GLOBAL_COLORBLIND=Farbenblindheitsshader
+TEXT_GLOBAL_COLORBLIND_HELP=<<<END_OF_TEXT
+Wendet einen Shader für Farbenblinde auf GW2 an:
+Protanopia: Rot stark reduziert (1%% Männer)
+Deuteranopia: Grün stark reduziert (1%% Männer)
+Tritanopia: Blau stark reduziert (0.003%% Bevölkerung)
+END_OF_TEXT
+TEXT_GLOBAL_COLORBLIND_MODE1=Protanopia
+TEXT_GLOBAL_COLORBLIND_MODE2=Deuteranopia
+TEXT_GLOBAL_COLORBLIND_MODE3=Tritanopia
+TEXT_PROF_GUARDIAN=Wächter
+TEXT_PROF_WARRIOR=Krieger
+TEXT_PROF_ENGINEER=Ingenieur
+TEXT_PROF_RANGER=Waldläufer
+TEXT_PROF_THIEF=Dieb
+TEXT_PROF_ELEMENTALIST=Elementarmagier
+TEXT_PROF_MESMER=Mesmer
+TEXT_PROF_NECROMANCER=Nekromant
+TEXT_PROF_REVENANT=Widergänger
+TEXT_PROF_DRAGONHUNTER=Drachenjäger
+TEXT_PROF_BERSERKER=Berserker
+TEXT_PROF_SCRAPPER=Schrotter
+TEXT_PROF_DRUID=Druide
+TEXT_PROF_DAREDEVIL=Draufgänger
+TEXT_PROF_TEMPEST=Sturmbote
+TEXT_PROF_CHRONO=Chronomant
+TEXT_PROF_REAPER=Schnitter
+TEXT_PROF_HERALD=Herold
+TEXT_METRICS_GW2_PING=GW2 Ping:
+TEXT_METRICS_GW2_FPS=GW2 FPS:
+TEXT_METRICS_BGDM_FPS=BGDM FPS:
+TEXT_METRICS_BGDM_APP=BGDM App:
+TEXT_SERVEROL_AA_ENABLED=AUTO-UPDATE AKTIVIERT
+TEXT_SERVEROL_AA_DISABLED=AUTO-UPDATE DEAKTIVIERT
+TEXT_SERVEROL_AA_UPDATING=UPDATING
+TEXT_SERVEROL_AA_UPDATE_OK=UPDATE ERFOLGREICH
+TEXT_SERVEROL_AA_UPDATE_FAIL=UPDATE FEHLGESCHLAGEN
+TEXT_SERVEROL_AA_UPDATE_REQ=SERVER UPDATE
+TEXT_SERVEROL_AA_UPDATED=NO UPDATE BENÖTIGT
+TEXT_SERVEROL_SRV_NO_CONN=SERVER NICHT VERBUNDEN
+TEXT_HELP_TITLE=BGDM Hilfe
+TEXT_HELP_BASICS_HEADER=Grundlagen
+TEXT_HELP_BASICS_TEXT=Grundlegende Funktionen:
+TEXT_HELP_BINDS_HEADER=Tastenkürzel
+TEXT_HELP_BINDS_TEXT=Standardbelegungen:
+TEXT_HELP_USERGUIDE_BIND=um BGDM Optionsmenü zu öffnen/schließen.
+TEXT_HELP_USERGUIDE1=Doppelklick auf Titelleiste minimiert Fenster.
+TEXT_HELP_USERGUIDE2=Rechtsklick auf Titelleiste zeigt Optionen (falls verfügbar).
+TEXT_HELP_USERGUIDE3=Klicken und ziehen auf einer freien Stelle zum Bewegen eines Fensters.
+TEXT_HELP_USERGUIDE4=Anfasser in der rechten unteren Ecke erlaubt Fenstergrößenänderung.
+TEXT_HELP_USERGUIDE5=Doppelklick auf den Anfasser sorgt für Autogrößenanpassung des Fensters.
+TEXT_HELP_USERGUIDE6=Left Spalte durch Klick auf Spaltentitel sortieren.
+TEXT_HELP_USERGUIDE7=Rechtsklick auf Spaltentitel zeigt Optionen.
+TEXT_HELP_USERGUIDE8=Scrollen per Mausrad.
+TEXT_HELP_USERGUIDE9=CTRL+Mausrad erlaubt Zoom.
+TEXT_BIND_BGDM_MAIN=BGDM Optionen
+TEXT_BIND_GLOBAL_ONOFF=Globales An/Aus
+TEXT_BIND_INPUTCAP_ONOFF=Interaktion An/Aus
+TEXT_BIND_HEADER_ONOFF=Verstecke/Zeige Fenstertitelleiste
+TEXT_BIND_BGDM_RELOAD=BGDM/Konfiguration neu laden
+TEXT_BIND_SCREENSHOT=Screenshot
+TEXT_BIND_LOCK_TARGET=Fixieren/Lösen des Ziels
+TEXT_BIND_DATA_RESET=Paneldaten zurücksetzen
+TEXT_BIND_LOGGING_ONOFF=Logging An/Aus
+TEXT_BIND_PANEL_HP=HP/Entfernung/Breakbar Umschalter
+TEXT_BIND_PANEL_COMPASS=Kompass An/Aus
+TEXT_BIND_PANEL_TARGET=Zielinformationen An/Aus
+TEXT_BIND_PANEL_GROUPDPS=Gruppenschadensanzeige An/Aus
+TEXT_BIND_PANEL_BUFFUPTIME=Buffanzeige An/Aus
+TEXT_BIND_PANEL_FLOATBARS=Lebensbalken An/Aus
+TEXT_BIND_PANEL_INSPECT_SELF=Char Inspect (self) On/Off
+TEXT_BIND_PANEL_INSPECT_TARGET=Char Inspect(target) On/Off
+TEXT_BIND_PANEL_SKILLS=Fertigkeitendetails An/Aus
+TEXT_ABUOT_TITLE=Über BGDM
+TEXT_ABOUT_VERSION=BGDM-Version
+TEXT_ABOUT_WHAT=BGDM ist ein GW2 Schadensmeter und Buffanzeige.
+TEXT_MENU_CBT_TITLE=Kampf
+TEXT_MENU_CBT_OOCGRACE=Außerkampfphasendauer
+TEXT_MENU_CBT_OOCGRACE_HELP=<<<END_OF_TEXT
+Legt die Dauer in Sekunden fest, ab der nach Kampfaustritt
+ein erneuter Kampfeintritt als neuer Kampf gewertet wird
+und somit DPS und Buffs zurückgesetzt werden.
+END_OF_TEXT
+TEXT_MENU_CBT_RETENTION=Zielbeibehaltung
+TEXT_MENU_CBT_RETENTION_HELP=<<<END_OF_TEXT
+Legt die Dauer in Sekunden fest, wie lange Zielinformationen
+angezeigt werden (DPS, TDPS etc.) Bei -1 bleiben die Informationen
+bis zum nächsten Kampf\Zielauswahl erhalten.
+END_OF_TEXT
+TEXT_MENU_TLOCK_TITLE=Zielfixierung
+TEXT_MENU_TLOCK_INVALID=Kein gültiges Ziel
+TEXT_MENU_TLOCK_LOCK=Aktuelles Ziel fixieren
+TEXT_MENU_TLOCK_UNLOCK=Aktuelles Ziel lösen
+TEXT_MENU_AUTOLOCK_TITLE=Autofixieren
+TEXT_MENU_AUTOLOCK_CURRENT=Aktuelles Ziel
+TEXT_MENU_AUTOLOCK_ID=Ziel-ID:
+TEXT_MENU_AUTOLOCK_CUSTOM=Benutzerdefiniert
+TEXT_MENU_AUTOLOCK_CLEAR_ALL=Alle löschen
+TEXT_MENU_AUTOLOCK_CLEAR_CUSTOM=Benutzerdefinierte löschen
+TEXT_MENU_AUTOLOCK_RAID_ALL=Alle Raidbosse
+TEXT_MENU_AUTOLOCK_RAID_CLEAR=Alle Raidbosse löschen
+TEXT_MENU_AUTOLOCK_RAID_WING1=Flügel 1
+TEXT_MENU_AUTOLOCK_RAID_WING2=Flügel 2
+TEXT_MENU_AUTOLOCK_RAID_WING3=Flügel 3
+TEXT_MENU_AUTOLOCK_RAID_WING4=Flügel 4
+TEXT_MENU_AUTOLOCK_RAID_WING1B1=Talwächter
+TEXT_MENU_AUTOLOCK_RAID_WING1B2=Gorseval
+TEXT_MENU_AUTOLOCK_RAID_WING1B3=Sabetha
+TEXT_MENU_AUTOLOCK_RAID_WING2B1=Faultierion
+TEXT_MENU_AUTOLOCK_RAID_WING2B21=Berg
+TEXT_MENU_AUTOLOCK_RAID_WING2B22=Zane
+TEXT_MENU_AUTOLOCK_RAID_WING2B23=Narella
+TEXT_MENU_AUTOLOCK_RAID_WING2B3=Matthias
+TEXT_MENU_AUTOLOCK_RAID_WING3B2=Festenkonstrukt
+TEXT_MENU_AUTOLOCK_RAID_WING3B3=Xera
+TEXT_MENU_AUTOLOCK_RAID_WING4B1=Cairn
+TEXT_MENU_AUTOLOCK_RAID_WING4B2=Mursaat-Aufseher
+TEXT_MENU_AUTOLOCK_RAID_WING4B3=Samarog
+TEXT_MENU_AUTOLOCK_RAID_WING4B4=Deimos
+TEXT_MENU_OPT_TINY=Winzig
+TEXT_MENU_OPT_AUTO_RESIZE=Autogröße
+TEXT_MENU_OPT_ALPHA=Transparenz
+TEXT_MENU_STYLE_TITLE=Stil
+TEXT_MENU_STYLE_GLOBAL=Global
+TEXT_MENU_STYLE_WND_ROUND=Runde Fenster
+TEXT_MENU_STYLE_WND_ROUND_HELP=<<<END_OF_TEXT
+Legt fest, ob Fensterecken
+abgerundet sein sollen.
+END_OF_TEXT
+TEXT_MENU_STYLE_ALPHA=Globale Transparenz
+TEXT_MENU_STYLE_ALPHA_HELP=Legt die globale Transparenz fest.
+TEXT_MENU_STYLE_METRICS=Metriken
+TEXT_MENU_STYLE_METRICS_BGDM=Zeige BGDM App Infos an.
+TEXT_MENU_STYLE_METRICS_BGDM_HELP=Zeigt BGDM Infos (FPS der App) im Metrikenfenster an.
+TEXT_MENU_STYLE_PROFCOL=Klassenfarben
+TEXT_MENU_STYLE_PROFCOL_HELP=<<<END_OF_TEXT
+Rechtsklick auf Farbbutton
+öffnet die Farbauswahlbox.
+END_OF_TEXT
+TEXT_MENU_STYLE_HPBAR=HP | Distanz | Breakbar
+TEXT_MENU_STYLE_HP_COMMA=Ziel-HP-Trennzeichen
+TEXT_MENU_STYLE_HP_COMMA_HELP=Legt fest, ob Tausendertrennzeichen in den Ziel-HP auftauchen.
+TEXT_MENU_STYLE_HP_PER=Ziel-%%
+TEXT_MENU_STYLE_HP_PER_HELP=Legt fest, ob prozentuale HP des Ziels angezeigt werden.
+TEXT_MENU_STYLE_HP_PER_MODE=Ziel-%%-Modus
+TEXT_MENU_STYLE_HP_PER_MODE_HELP=Anzeige der Ziel-HP als Ganz- oder Gleitkommazahl (90 gegenüber 90.00)
+TEXT_MENU_STYLE_HP_PER_WIDTH=Ziel-%%-Breite
+TEXT_MENU_STYLE_HP_PER_WIDTH_HELP=Dynamische oder fixe Ziel-%-Breite ([1%] oder [  1%])
+TEXT_MENU_STYLE_COL_PLAYERHP=Spieler-HP-Farbe
+TEXT_MENU_STYLE_COL_TARGETHP=Ziel-HP-Farbe
+TEXT_MENU_STYLE_COL_TARGETDST=Ziel-Distanz-Farbe
+TEXT_MENU_STYLE_COL_TARGETBB=Ziel-Breakbar-Farbe
+TEXT_LOCALIZATION_MENU_TITLE=Sprache
+TEXT_LOCALIZATION_DEFAULT=Default (English)
+TEXT_LOCALIZATION_CURR_LANG=Aktuelle Sprache:
+TEXT_LOCALIZATION_CURR_FILE=Sprachdatei:
+TEXT_LOCALIZATION_RESCAN=Verzeichnis scannen
+TEXT_LOCALIZATION_RESCAN_HELP=Sucht im Verzeichnis nach neuen Sprachdateien:
+TEXT_LOCALIZATION_RELOAD=Datei erneut laden
+TEXT_LOCALIZATION_RELOAD_HELP=Inhalt der ausgewählten Datei erneut laden.
+TEXT_LOCALIZATION_SAVE=Datei speichern.
+TEXT_LOCALIZATION_SAVE_HELP=Aktuellen Text in die Datei speichern.
+TEXT_LOCALIZATION_EDITOR_TITLE=Spracheditor
+TEXT_LOCALIZATION_EDITOR_OPEN=Editor öffnen.
+TEXT_LOCALIZATION_EDITOR_HELP=Öffnet den Sprachdateieneditor.
+TEXT_LOCALIZATION_EDITOR_FILTER=Filter:
+TEXT_LOCALIZATION_EDITOR_FILTER_HELP=<<<END_OF_TEXT
+Filteverwendung:
+   ""         Zeigt alle Zeilen mit
+   "xxx"      Zeigt alle Zeilen mit "xxx"
+   "xxx,yyy"  Zeigt alle Zeilen mit "xxx" oder "yyy"
+   "-xxx"     verstecke alle Zeilen mit "xxx"
+END_OF_TEXT
+TEXT_BGDM_OPTS=BGDM Optionen
+TEXT_BGDM_HELP=Hilfe
+TEXT_BGDM_HELP_VIEW=Hilfe anzeigen
+TEXT_BGDM_HELP_METRICS=Metriken
+TEXT_BGDM_HELP_SRV_STATUS=Serverstatus
+TEXT_BGDM_HELP_ABOUT=Über BGDM
+TEXT_BGDM_OPTS_ENABLED=BGDM Aktiviert
+TEXT_BGDM_OPTS_INPUTCAP=Interaktion An/Aus
+TEXT_BGDM_OPTS_HEADERS=Minimale Panele
+TEXT_BGDM_OPTS_PROX=Umgebung
+TEXT_BGDM_OPTS_PROX_SQUAD_PRIORITY=Einsatztruppmitglieder priorisieren: bald(tm)
+TEXT_BGDM_OPTS_PROX_NON_SQUAD_HIDE=Verstecke Spieler außerhalb des Einsatztrupps.
+TEXT_BGDM_OPTS_PROX_NON_PARTY_HIDE=Verstecke Spieler außerhalb des Einsatztrupps/Gruppe/Gilde
+TEXT_BGDM_OPTS_SRV=Server
+TEXT_BGDM_OPTS_SRV_AUTO_UP=Autoupdate aktiviert
+TEXT_BGDM_OPTS_SRV_NET_SHARE=Netzwerk-DPS-Sharing aktiviert
+TEXT_BGDM_MAIN_ONOFF=BGDM An/Aus:
+TEXT_BGDM_MAIN_ONOFF_HELP=<<<END_OF_TEXT
+Führt zur Deaktivierung sämtlicher BGDM-Verarbeitungen
+inklusive Netzwerkfunktionalität und der Anzeige aller Fenster außer den Optionen.
+END_OF_TEXT
+TEXT_BGDM_MAIN_INPUTCAP_ONOFF=Interaktion On/Off:
+TEXT_BGDM_MAIN_INPUTCAP_ONOFF_HELP=<<<END_OF_TEXT
+Verhindert das Interagieren mit sämtlichen Fenstern (außer dem Optionsfenster).
+Mausklicks werden vom Spiel in dem Fall auch dann registriert,
+wenn diese über einem BGDM-Fenster ausgeführt werden.
+END_OF_TEXT
+TEXT_BGDM_MAIN_PANEL_TARGET_HP=Ziel-HP
+TEXT_BGDM_MAIN_PANEL_TARGET_DIST=Ziel-Distanz
+TEXT_BGDM_MAIN_PANEL_TARGET_BB=Ziel-Breakbar
+TEXT_BGDM_MAIN_PANEL_PLAYER_HP=Spieler-HP-%
+TEXT_BGDM_MAIN_PANEL_FLOAT_BARS=Lebensbalken
+TEXT_BGDM_MAIN_PANEL_COMPASS=Kompass
+TEXT_BGDM_MAIN_PANEL_TARGET_STATS=Zieldpsinfo
+TEXT_BGDM_MAIN_PANEL_GROUP_STATS=Gruppendps
+TEXT_BGDM_MAIN_PANEL_BUFF_UPTIME=Buffanzeige
+TEXT_BGDM_MAIN_PANEL_INSPECT_SELF=Player Gearcheck
+TEXT_BGDM_MAIN_PANEL_INSPECT_TARGET=Target Gearcheck
+TEXT_BGDM_MAIN_PANEL_SKILLS=Fertigkeitendetails
+TEXT_PANEL_TARGET_SHOW_DMG=Zeige Schaden
+TEXT_PANEL_TARGET_SHOW_TTK=Zeige Zeit bis zum Tod (TTK)
+TEXT_PANEL_TARGET_SHOW_GRAPH=Zeige Graph
+TEXT_PANEL_TARGET_SHOW_NPC=Zeige NSC-Details
+TEXT_PANEL_TARGET_TIME=ZEIT:
+TEXT_PANEL_TARGET_L10S=L10
+TEXT_PANEL_TARGET_L30S=L30
+TEXT_PANEL_TARGET_PDPS=PDPS:
+TEXT_PANEL_TARGET_TDPS=TDPS:
+TEXT_PANEL_TARGET_PDMG=PDMG:
+TEXT_PANEL_TARGET_TDMG=TDMG:
+TEXT_PANEL_TARGET_TTK=TTK:
+TEXT_PANEL_OPTS_LINENO=Zeilennummerierung
+TEXT_PANEL_OPTS_PROFCOL=Klassenfarben
+TEXT_PANEL_GDPS_GRAPH=Zeige DPS-Graph
+TEXT_PANEL_GDPS_CLEAVE=Flächenschaden
+TEXT_PANEL_GDPS_TARGET=Ziel
+TEXT_PANEL_GDPS_INVULN=unverwundbar
+TEXT_PANEL_GDPS_LOCKED=fixiert
+TEXT_PANEL_GDPS_UNLOCKED=gelöst
+TEXT_GDPS_COLAC_NAME=NAME
+TEXT_GDPS_COLAC_CLASS=KLS
+TEXT_GDPS_COLAC_DPS=DPS
+TEXT_GDPS_COLAC_DMG_PER=PER
+TEXT_GDPS_COLAC_DMG_OUT=DMGOUT
+TEXT_GDPS_COLAC_DNG_IN=DMGIN
+TEXT_GDPS_COLAC_HPS=HPS
+TEXT_GDPS_COLAC_HEAL_OUT=HEAL
+TEXT_GDPS_COLAC_TIME=TIME
+TEXT_GDPS_COL_NAME=Name
+TEXT_GDPS_COL_CLASS=Klasse
+TEXT_GDPS_COL_DPS=Schaden /s
+TEXT_GDPS_COL_DMG_PER=Schaden %
+TEXT_GDPS_COL_DMG_OUT=Damage Out
+TEXT_GDPS_COL_DNG_IN=Damage In
+TEXT_GDPS_COL_HPS=Heilung /s
+TEXT_GDPS_COL_HEAL_OUT=Heilung Out
+TEXT_GDPS_COL_TIME=Zeit
+TEXT_BUFF_STD=Standardbuffs
+TEXT_BUFF_PROF=Klassenspezifisch
+TEXT_BUFF_OPT_ICONS=Icons
+TEXT_BUFF_ICONS_STD=Verwende Standard-Icons
+TEXT_BUFF_ICONS_CONTRAST=Verwende Kontrast-Icons
+TEXT_BUFF_ICONS_DARK=Verwende Dunkle Icons
+TEXT_BUFF_ICONS_DOWN=Verwende Angeschlagener-Gegner-Icon
+TEXT_BUFF_ICONS_SEAWEED=Verwende Seetangsalat-Icon
+TEXT_BUFF_COL_NAME=Name
+TEXT_BUFF_COL_CLS=Klasse
+TEXT_BUFF_COL_SUB=Einsatztruppuntergruppe
+TEXT_BUFF_COL_DOWN=Angeschlagen
+TEXT_BUFF_COL_SCLR=Gelehrtenrunenbonus
+TEXT_BUFF_COL_SEAW=Seetangsalatbonus
+TEXT_BUFF_COL_PROT=Schutz
+TEXT_BUFF_COL_QUIK=Schnelligkeit
+TEXT_BUFF_COL_ALAC=Tatendrang
+TEXT_BUFF_COL_FURY=Wut
+TEXT_BUFF_COL_MIGHT=Macht
+TEXT_BUFF_COL_GOTL=Druide: Anmut des Landes
+TEXT_BUFF_COL_GLEM=Druide: Glyphe der Verstärkung
+TEXT_BUFF_COL_VIGOR=Eifer
+TEXT_BUFF_COL_SWIFT=Eile
+TEXT_BUFF_COL_STAB=Stabilität
+TEXT_BUFF_COL_RETAL=Vergeltung
+TEXT_BUFF_COL_RESIST=Widerstand
+TEXT_BUFF_COL_REGEN=Regeneration
+TEXT_BUFF_COL_AEGIS=Aegis
+TEXT_BUFF_COL_BANS=Krieger: Banner der Stärke
+TEXT_BUFF_COL_BAND=Krieger: Banner der Disziplin
+TEXT_BUFF_COL_BANT=Krieger: Banner der Taktik
+TEXT_BUFF_COL_EA=Krieger: Verbündete stärken
+TEXT_BUFF_COL_SPOTTER=Waldläufer: Späher
+TEXT_BUFF_COL_FROST=Waldläufer: Frostgeist
+TEXT_BUFF_COL_SUN=Waldläufer: Sonnengeist
+TEXT_BUFF_COL_STORM=Waldläufer: Sturmgeist
+TEXT_BUFF_COL_STONE=Waldläufer: Steingeist
+TEXT_BUFF_COL_ENGPP=Ingenieur: Gezielte Wirkung
+TEXT_BUFF_COL_REVNR=Herold: Natürliche Resonanz
+TEXT_BUFF_COL_REVAP=Widergänger: Präsenz des Assassinen
+TEXT_BUFF_COL_REVRD=Widergänger: Ritus des Großen Zwergs
+TEXT_BUFF_COL_ELESM=Elementarmagier: Beruhigender Nebel
+TEXT_BUFF_COL_GRDSN=Wächter: In der Menge liegt die Kraft
+TEXT_BUFF_COL_NECVA=Nekromant: Vampirische Aura
+TEXT_BUFF_COL_TIME=Zeit
+TEXT_GEAR_TITLE_SELF=Character Inspect (Self)
+TEXT_GEAR_TITLE_TARGET=Character Inspect (Target)
+TEXT_GEAR_OPT_LOCALTEXT=Localized Text
+TEXT_GEAR_TAB_GEAR=Gear
+TEXT_GEAR_TAB_TRAITS=Traits
+TEXT_GEAR_TAB_SKINS=Skins
+TEXT_GEAR_WEPS=Weapons
+TEXT_GEAR_NOEQUIP=NOEQUIP
+TEXT_GEAR_NOSTATS=NOSTATS
+TEXT_WEP_TYPE_SWORD=Sword
+TEXT_WEP_TYPE_HAMMER=Hammer
+TEXT_WEP_TYPE_LONGBOW=Longbow
+TEXT_WEP_TYPE_SHORTBOW=Shortbow
+TEXT_WEP_TYPE_AXE=Axe
+TEXT_WEP_TYPE_DAGGER=Dagger
+TEXT_WEP_TYPE_GREATSWORD=Greatsword
+TEXT_WEP_TYPE_MACE=Mace
+TEXT_WEP_TYPE_PISTOL=Pistol
+TEXT_WEP_TYPE_UNKNOWN=UNKNOWN
+TEXT_WEP_TYPE_RIFLE=Rifle
+TEXT_WEP_TYPE_SCEPTER=Scepter
+TEXT_WEP_TYPE_STAFF=Staff
+TEXT_WEP_TYPE_FOCUS=Focus
+TEXT_WEP_TYPE_TORCH=Torch
+TEXT_WEP_TYPE_WARHORN=Warhorn
+TEXT_WEP_TYPE_SHIELD=Shield
+TEXT_GEAR_BACK=BACK
+TEXT_GEAR_HEAD=HEAD
+TEXT_GEAR_SHOULDER=SHOULDER
+TEXT_GEAR_CHEST=CHEST
+TEXT_GEAR_GLOVES=GLOVES
+TEXT_GEAR_LEGS=LEGS
+TEXT_GEAR_BOOTS=BOOTS
+TEXT_GEAR_WEP1M=WEP1_M
+TEXT_GEAR_WEP1O=WEP1_O
+TEXT_GEAR_WEP2M=WEP2_M
+TEXT_GEAR_WEP2O=WEP2_O
+TEXT_GEAR_EAR1=EAR1
+TEXT_GEAR_EAR2=EAR2
+TEXT_GEAR_RING1=RING1
+TEXT_GEAR_RING2=RING2
+TEXT_GEAR_AMULET=AMULET
+TEXT_GEAR_AR_TOTAL=Total AR
+TEXT_GEAR_AR_MAIN=Main:
+TEXT_GEAR_AR_ALT=Alt :
+TEXT_FLOATBAR_TITLE=Float Bars
+TEXT_FLOATBAR_HP=Draw HP Bar
+TEXT_FLOATBAR_GOTL=Draw GOTL indicator
+TEXT_FLOATBAR_CLASS=Draw Class indicator
+TEXT_FLOATBAR_INC_SELF=Include Self
+TEXT_FLOATBAR_INC_SELF_HELP=Draw the float bar for controlled character.
+TEXT_FLOATBAR_MAX_PL=Max Players
+TEXT_FLOATBAR_MAX_PL_HELP=<<<END_OF_TEXT
+Maximum amount of ally bars to display capped at squad size (50)
+Note that proximity settings apply here as well, e.g. if you limit
+to squad only you will only display bars on people from your squad
+even if there are more people around you that can be accomodated.
+Double click or click and drag to change the value.
+END_OF_TEXT
+TEXT_FLOATBAR_BARVERT=Bar Vertical
+TEXT_FLOATBAR_BARVERT_HELP=<<<END_OF_TEXT
+Float bar vertical adjustment (y-axis) from character hitbox.
+The higher this value the higher the bar will appear on the
+character model.
+END_OF_TEXT
+TEXT_FLOATBAR_BARWIDTH=Bar Width
+TEXT_FLOATBAR_BARWIDTH_HELP=<<<END_OF_TEXT
+Float bar rectangle width.
+Affects both HP bar & GOTL bar.
+END_OF_TEXT
+TEXT_FLOATBAR_BARHEIGHT_HP=Bar Height (HP)
+TEXT_FLOATBAR_BARHEIGHT_HP_HELP=HP Float bar rectangle width.
+TEXT_FLOATBAR_BARHEIGHT_GOTL=Bar Height (GOTL)
+TEXT_FLOATBAR_BARHEIGHT_GOTL_HELP=GOTL Float bar rectangle width.
+TEXT_FLOATBAR_CLASS_RECT=Class Rect w/h
+TEXT_FLOATBAR_CLASS_RECT_HELP=<<<END_OF_TEXT
+Class rectangle size (width x height).
+Affects both icon mode & colored mode.
+END_OF_TEXT
+TEXT_FLOATBAR_CLASS_IND=Class indicator
+TEXT_FLOATBAR_CLASS_IND_HELP=<<<END_OF_TEXT
+Only takes effect when class indicator is enabled.
+Class Icon will draw the approperiate class icon (including elites)
+Class image will draw a colored rectangle using the same coloring
+used to color the names when enabling profession coloring under
+options of the buff uptime and group DPS panels.
+<<<END_OF_TEXT
+TEXT_FLOATBAR_TEXTPER_SIZE=Text %% size
+TEXT_FLOATBAR_TEXTPER_SIZE_HELP=Determines the size of the HP bar text percentage.
+TEXT_FLOATBAR_TEXTPER_DRAW=Draw Text %%
+TEXT_FLOATBAR_TEXTPER_DRAW_HELP=Determines if the HP percentage will be written onto the HP bar.
+TEXT_FLOATBAR_TEXTPER_FR_ROUND=Frame rounding
+TEXT_FLOATBAR_TEXTPER_FR_ROUND_HELP=<<<END_OF_TEXT
+Determines if the rectangle frame edges will be rounded.
+Affects all drawn frames: HP, GOTL and class indicator.
+END_OF_TEXT
+TEXT_FLOATBAR_TEXTPER_FR_THICK=Frame thickness
+TEXT_FLOATBAR_TEXTPER_FR_THICK_HELP=<<<END_OF_TEXT
+Determines the rectangle frame thickness.
+Affects all drawn frames: HP, GOTL and class indicator.
+END_OF_TEXT
+TEXT_FLOATBAR_COL_FRAME=Frame color
+TEXT_FLOATBAR_COL_TEXTPER=Text %% color
+TEXT_FLOATBAR_COL_CLASS_BG=Class bg color
+TEXT_FLOATBAR_COL_HP_LEFT=HP left color  (normal)
+TEXT_FLOATBAR_COL_HP_90=HP <90%% color  (normal)
+TEXT_FLOATBAR_COL_HP_RIGHT=HP right color (normal)
+TEXT_FLOATBAR_COL_DOWN_LEFT=HP left color  (downed)
+TEXT_FLOATBAR_COL_DOWN_RIGHT=HP right color (downed)
+TEXT_FLOATBAR_COL_SHROUD_LEFT=HP left color  (shroud)
+TEXT_FLOATBAR_COL_SHROUD_RIGHT=HP right color (shroud)
+TEXT_FLOATBAR_COL_GOTL_LEFT=GOTL left color
+TEXT_FLOATBAR_COL_GOTL_RIGHT=GOTL right color

@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  bgdm
+
+  Created by Bhagwan on 6/16/17.
+  Copyright © 2017 Bhagwan Software. All rights reserved.
+*/
+
+
+"appName" = "BGDM";
+"language" = "Language";
+"about" = "About BGDM";
+"quit" = "Quit";
+"tooltip" = "ctrl-click to quit";
+
+// Debug levels
+"logging"   = "Logging";
+"trace"     = "Trace";
+"debug"     = "Debug";
+"info"      = "Info";
+"error"     = "Error";
+"crit"      = "Critical";
+
+// Debug menu
+"scanOffsets" = "Scan offsets";
+
+// Connection state strings
+"stateConnected"        = "<BGDM initialized>";
+"stateDisconnected"     = "<BGDM bundle not loaded>";
+"stateNotRunning"       = "<GW2 is not running>";
+"stateNotPatched"       = "<GW2 is not patched>";
+"stateNeedUpdate"       = "<BGDM needs update>";
+"stateInit"             = "<BGDM is initializing...>";
+"stateError"            = "<BGDM init error>";
+
+// Menu items
+"injectGW2" = "[Load   BGDM]";
+"unloadGW2" = "[Unload BGDM]";
+"patchGW2"  = "[Patch  GW2]";
+"revertGW2" = "[Revert GW2]";
+
+// Message box textx
+"privFail"          = "Failed to acquire admin privilege";
+"notInstalled"      = "Unable to find GW2 app";
+"injectSuccess"     = "BGDM loaded successfully";
+"injectFailure"     = "Unable to load BGDM";
+"unloadSuccess"     = "BGDM unloaded successfully";
+"unloadFailure"     = "Unable to unload BGDM";
+"patchSuccess"      = "Succefully patched GW2";
+"patchFailure"      = "Unable to patch GW2";
+"revertSuccess"     = "Succefully reverted GW2";
+"revertFailure"     = "Unable to revert GW2 (not patched?)";

@@ -1,0 +1,826 @@
+//
+// Updated for game build 76706/76765/76777 (2017-05-16)
+//
+
+// Game build ID
+// Search for either L"Guild Wars 2" (2nd assert) or "build %u" to get the function ptr
+
+OFFSET(uint32_t, buildId, 0x1579c, u"Build \%u", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x9); } );
+        ADDR_CB( { return addr+0x5; } );
+    },
+    VERIFY_CB { LOG_INFO("%-24s %d", "buildId", val); return val >= 76000 && val <= 100000; }
+)
+
+// CContext
+// CharClient::CContext* m_charContext;
+/*
+This is the main game state object from which you can get to almost anything else. It can
+only be safely accessed from within the game thread.
+A pointer to this object can be found in the thread-local storage of the game thread. Windows
+stores these in FS:[0x2c].
+The current location is: (unlikely to change)
+CContext ***localStorage = FS:[0x2c];
+CContext *ctx = localStorage[0][1];
+
+It consists of only pointers to other sub contexts and nulled out space.
+
+The char context offset can be found by looking at the objects before and after the offset
+where it was before and compare to the CharClient::CContext description.
+"!IsPlayer() || GetPlayer()" + 0x1a = 64-bit mov opcode (mov rbp, qword ptr [rax + 0x??])
+*/
+
+OFFSET(uint32_t, fncGameMainThread, 0xE5894855, "!m_fileLocks.Count()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x1B; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+
+OFFSET(uint32_t, fncGetTlsContext, 0xE5894855, "m_ownerCharacter->GetPlayer() == CharClientContext()->GetControlledPlayer()", true, 0, 0,
+    ADDR_CBARR {
+    ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+    ADDR_CB( { return hl::FollowRelativeAddress(addr-0x11); } );
+    ADDR_CB( { return hl::FollowRelativeAddress(addr+0x5); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+
+OFFSET(uint32_t, fncCharClientContext, 0xE5894855, "m_ownerCharacter->GetPlayer() == CharClientContext()->GetControlledPlayer()", true, 0, 0,
+    ADDR_CBARR {
+    ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+    ADDR_CB( { return hl::FollowRelativeAddress(addr-0x11); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGetWmAgentArray, 0xE5894855, "m_gadget", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x1A); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGadgetContext, 0xE5894855, "attackTarget", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x2A); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGetShardId, 0xE5894855, "41 BC FF FF FF FF 39 C3", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x4); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGetMapDef, 0xE5894855, "mapDef->GetMapType() == Content::MAP_TYPE_INSTANCE", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x13); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint8_t, mapDefType, 0x2C, "mapDef->GetMapType() == Content::MAP_TYPE_INSTANCE", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0xD; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x40; }
+)
+
+OFFSET(uint32_t, fncGetWmAgent, 0xE5894855, "topmost.agent", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x8); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x9); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+
+OFFSET(uint32_t, fncGetChatCtx, 0xE5894855, "selectedTab", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x17); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGetContactCtx, 0xE5894855, "m_portalChannel.IsValid()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x2); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncGetSquadCtx, 0xE5894855, "squadContext", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0xB); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncCodedTextFromHashId, 0xE5894855, "undecoratedCodedName", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x7); } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncDecodeCodedText, 0xE5894855, "resultFunc", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x26; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncCombatLog, 0xE5894855, "logType < UI_COMBAT_LOG_TYPES", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x10; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncCombatLogResult, 0xE5894855, "type < AGENT_STATUS_COMBAT_EVENT_TYPES", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x11; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+/*OFFSET(uint32_t, fncDamageLog, 0xE5894855, "targetAgent", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x26; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)*/
+
+OFFSET(uint32_t, fncAreaLog, 0xE5894855, "channelOut", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x2A; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uint32_t, fncPlCliUser, 0xE5894855, "4B 8D 0C 7F 48 C1 E1 04 48 8B 44 08 08", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x2E; } );
+    },
+    VERIFY_CB { return val == 0xE5894855; }
+)
+
+OFFSET(uintptr_t, viewAgentSelect, 0x0, "ViewAdvanceAgentSelect", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0xa); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x7); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, viewAgentView, 0x0, "ViewAdvanceAgentView", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0xa); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x7); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, viewWorldView, 0x0, "ViewAdvanceWorldView", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0xa); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x3); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, viewUi, 0x0, "ViewAdvanceUi", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0xa); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x7); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, uiIntSize, 0x54, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, uiFlags1, 0x1b0, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, uiFlags2, 0x1b4, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pMapId, 0x0, "41 81 E4 FC FF 01 00", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x24); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x6); } );
+        /*ADDR_CB( { return hl::FollowRelativeAddress(addr+0xC)+1; } );*/
+        },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pIfHide, 0x0, "83 FF 01 19 C9 83 C9 01", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x4); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+/*OFFSET(uintptr_t, pMapOpen, 0x0, "'CameraSettings()->GetDebugControllerType()'", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x6D)+1; } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pMapOpen, 0x0, "B8 0F 00 00 00 83 3D", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x7)+1; } );
+    },
+    VERIFY_CB { return true; }
+)*/
+
+OFFSET(uintptr_t, pMapOpen, 0x0, "B8 11 00 00 00 48 C1 E9 20", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x12); } );
+        },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pPingCtx, 0x0, "48 89 CA 48 C1 EA 20 8D 04 0A", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0xC); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pFpsCtx, 0x0, "80 0D ?? ?? ?? ?? 20 5D C3", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x4); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, pActionCam, 0x0, "74 ?? C6 05 ?? ?? ?? ?? 01 C7 45", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x4)+1; } );
+    },
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uintptr_t, compassManager, 0x0, "CompassManager()->IsCompassFixed()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x11); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x7); } );
+    },
+    VERIFY_CB { return true; }
+)
+
+
+OFFSET(uint32_t, tlxCtxCharClient, 0x90, "!IsPlayer() || GetPlayer()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr+0xC; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0x120; }
+)
+
+OFFSET(uint32_t, tlxCtxGadget, 0x130, "attackTarget", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x2A); } );
+        ADDR_CB( { return addr+0xC; } );
+    },
+    VERIFY_CB { return val >= 0xA0 && val <= 0x1A0; }
+)
+
+OFFSET(uint8_t, gadgetCtxVtGetAttackTgt, 0x20, "attackTarget", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x1D; } );
+        },
+    VERIFY_CB { return val >= 0x08 && val <= 0x60; }
+)
+
+OFFSET(uint8_t, gadgetCtxVtGetGadget, 0x18, "gadget", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x1D; } );
+    },
+    VERIFY_CB { return val >= 0x08 && val <= 0x60; }
+)
+
+OFFSET(uint8_t, gadgetVtGetAttitude, 0x28, "No valid case for switch variable 'gadget->GetAttitude()'", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0xA); } );
+        ADDR_CB( { return addr-0x5; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x60; }
+)
+
+OFFSET(uint32_t, gadgetHealth, 0x210, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, atkTgtGadget, 0x58, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+
+OFFSET(uint8_t, charCtxVtGetCtlPlayer, 0x50, "player == CharClientContext()->GetControlledPlayer()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x6; } );
+    },
+    VERIFY_CB { return val >= 0x20 && val <= 0x120; }
+)
+
+
+OFFSET(uint8_t, charCtxCharArray, 0x58, "m_characterArray[agentId] == character", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0x180; }
+)
+
+
+OFFSET(uint8_t, charCtxPlayArray, 0x78, "m_playerArray.Count() <= playerId || !m_playerArray[playerId]", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x8; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0x180; }
+)
+
+
+OFFSET(uint32_t, charCtxCtlChar, 0x90, "!m_controlledCharacter || m_controlledCharacter->IsFinalized()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x11; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0x180; }
+)
+
+
+OFFSET(uint32_t, charCtxCtlPlayer, 0x98, "player == m_controlledPlayer", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x5; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0x180; }
+)
+
+
+OFFSET(uint8_t, wmAgVtGetAgent, 0x60, "wmAgent->GetAgent() != agent", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x8); } );
+        ADDR_CB( { return addr-0x5; } );
+    },
+    VERIFY_CB { return val >= 0x20 && val <= 0x180; }
+)
+
+// guildTagLogoFrame, scroll up to the 2nd agent assert and ref that addr
+// the call to the offset should be right after the call to getWmAgent()
+OFFSET(uint32_t, wmAgVtGetCodedName, 0x88, "48 89 C7 FF 91 ?? 00 00 00 48 85 C0 74 ?? 4C 89 E7 48 89 C6", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr+0x5; } );
+    },
+    VERIFY_CB { return val >= 0x40 && val <= 0x200; }
+)
+
+OFFSET(uint32_t, agSelLocked, 0x230, "!m_lockedSelection", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x400; }
+)
+
+OFFSET(uint8_t, agSelAuto, 0x50, "!m_autoSelection", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x4; } );
+    },
+    VERIFY_CB { return val >= 0x20 && val <= 0x120; }
+)
+
+OFFSET(uint32_t, agSelHover, 0xF8, "!m_hoverSelection", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x60 && val <= 0x200; }
+)
+
+OFFSET(uint8_t, agSelCtxMode, 0x70, "m_contextMode == CONTEXT_MODE_NULL", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x4; } );
+    },
+    VERIFY_CB { return val >= 0x40 && val <= 0x140; }
+)
+
+OFFSET(uint32_t, agentVtGetId, 0x100, "targetAgent && targetAgent->GetAgentId()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0xB; } );
+    },
+    VERIFY_CB { return val >= 0x80 && val <= 0x180; }
+)
+
+OFFSET(uint8_t, agentCategory, 0x34, "m_agent->GetCategory() == AGENT_CATEGORY_CHAR", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x3; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x60; }
+)
+
+OFFSET(uint8_t, agentTransform, 0x48, "!agents->Count()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr+0x37, 6); } );
+        ADDR_CB( { return addr+0xB; } );
+},
+VERIFY_CB { return val >= 0x10 && val <= 0x80; }
+)
+
+OFFSET(uint32_t, agentVtGetType, 0x198, "agent->GetType() == AGENT_TYPE_CHAR", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x8; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x200; }
+)
+
+OFFSET(uint32_t, agentVtGetPos, 0x160, "No valid case for switch variable 'ECharLocale'", true, 0, 2,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr+0x15); } );
+        ADDR_CB( { return addr+0x2D; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x200; }
+)
+
+OFFSET(uint32_t, agentAgChar, 0x48, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, charVtGetAgent, 0x1A0, "character->GetAgent() == m_agent", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x9; } );
+    },
+    VERIFY_CB { return val >= 0x160 && val <= 0x260; }
+)
+
+
+OFFSET(uint32_t, charVtGetPlayer, 0x298, "!IsPlayer() || GetPlayer()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x9; } );
+    },
+    VERIFY_CB { return val >= 0x200 && val <= 0x400; }
+)
+
+OFFSET(uint32_t, charVtGetPlayerId, 0x2A0, "playerId", true, 4, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0xC; } );
+    },
+    VERIFY_CB { return val >= 0x200 && val <= 0x400; }
+)
+
+OFFSET(uint32_t, charVtIsPlayer, 0x488, "!IsPlayer() || GetPlayer()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x19; } );
+    },
+    VERIFY_CB { return val >= 0x400 && val <= 0x500; }
+)
+
+OFFSET(uint32_t, charVtIsAlive, 0x328, "character->IsAlive()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x17; } );
+    },
+    VERIFY_CB { return val >= 0x300 && val <= 0x400; }
+)
+
+OFFSET(uint32_t, charVtIsDowned, 0x368, "character->IsAlive()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x300 && val <= 0x400; }
+)
+
+OFFSET(uint32_t, charVtIsInWater, 0x3f8, "character->IsAlive()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr+0x9; } );
+    },
+    VERIFY_CB { return val >= 0x360 && val <= 0x460; }
+)
+
+OFFSET(uint32_t, charVtIsClone, 0x438, "character->IsPlayer() || character->IsMonsterClone()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0xD; } );
+    },
+    VERIFY_CB { return val >= 0x3B0 && val <= 0x4B0; }
+)
+
+OFFSET(uint32_t, charVtIsMonster, 0x410, "IsPlayer() || IsMonster()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x8; } );
+    },
+    VERIFY_CB { return val >= 0x3A0 && val <= 0x4A0; }
+)
+
+
+OFFSET(uint32_t, charVtGetCombatant, 0x120, "buffMgr && buffMgr->HasScreenBorder()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x25; } );
+    },
+    VERIFY_CB { return val >= 0xA0 && val <= 0x1A0; }
+)
+
+OFFSET(uint32_t, charVtGetInventory, 0x88, "ownedCharacter->GetInventory()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0xD; } );
+    },
+    VERIFY_CB { return val >= 0x50 && val <= 0x150; }
+)
+
+OFFSET(uint32_t, charVtGetSpeciesDef, 0x300, "m_coreStats", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr+0x21); } );
+        ADDR_CB( { return addr-0xC; } );
+    },
+    VERIFY_CB { return val >= 0x2A0 && val <= 0x3A0; }
+)
+
+OFFSET(uint32_t, charVtIsRangerPet, 0x480, "m_coreStats", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr+0x21); } );
+        ADDR_CB( { return addr-0x31; } );
+    },
+    VERIFY_CB { return val >= 0x400 && val <= 0x500; }
+)
+
+OFFSET(uint32_t, charAttitude, 0xA8, "m_attitudeTowardControlled", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x13; } );
+    },
+    VERIFY_CB { return val >= 0x60 && val <= 0x160; }
+)
+
+OFFSET(uint32_t, charBreakbar, 0xB0, "m_combatantNotifyList.IsEmpty()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0x12); } );
+        ADDR_CB( { return g_scanner->findAddrRef(addr, 2); } );
+        ADDR_CB( { return addr-0x22; } );
+    },
+    VERIFY_CB { return val >= 0x80 && val <= 0x180; }
+)
+
+OFFSET(uint32_t, charHealth, 0x378, "m_health", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x8; } );
+    },
+    VERIFY_CB { return val >= 0x300 && val <= 0x400; }
+)
+
+OFFSET(uint32_t, charCoreStats, 0x318, "m_coreStats", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x9; } );
+    },
+    VERIFY_CB { return val >= 0x2A0 && val <= 0x3A0; }
+)
+
+OFFSET(uint32_t, charFlags, 0x160, "48 83 C9 20 48 83 E0 DF", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x200; }
+)
+
+OFFSET(uint32_t, charProfession, 0x470, "!m_profession", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0xA; } );
+    },
+    VERIFY_CB { return val >= 0x400 && val <= 0x500; }
+)
+
+OFFSET(uint32_t, charEndurance, 0x360, "!m_endurance", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x2B0 && val <= 0x3B0; }
+)
+
+OFFSET(uint32_t, charSkillbar, 0x480, "!m_skillbar", true, 0, 2,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x7; } );
+    },
+    VERIFY_CB { return val >= 0x400 && val <= 0x500; }
+)
+
+
+/*OFFSET(uint8_t, playerVtGetChar, 0x20, "TextValidateLiteral(m_name.Ptr())", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x18); } );
+        ADDR_CB( { return addr-0x8; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x80; }
+)*/
+
+OFFSET(uint8_t, playerVtGetChar, 0x20, "!m_player || m_player->GetCharOwned() == m_character", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x9; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x80; }
+)
+
+OFFSET(uint8_t, playerVtGetName, 0x78, "StrCmp(newName, m_character->GetPlayer()->GetName()) != 0", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x16; } );
+    },
+    VERIFY_CB { return val >= 0x40 && val <= 0x140; }
+)
+
+OFFSET(uint32_t, playerVtGetSpecMgr, 0x2A8, "specializationMgr", true, 3, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x11; } );
+    },
+    VERIFY_CB { return val >= 0x240 && val <= 0x340; }
+)
+
+
+OFFSET(uint8_t, playerName, 0x68, "TextValidateLiteral(m_name.Ptr())", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x15; } );
+    },
+    VERIFY_CB { return val >= 0x40 && val <= 0x140; }
+)
+
+OFFSET(uint8_t, combatantVtGetBuffbar, 0x40, "buffMgr && buffMgr->HasScreenBorder()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x19; } );
+    },
+    VERIFY_CB { return val >= 0x10 && val <= 0x80; }
+)
+
+OFFSET(uint32_t, invEquipItemArr, 0x120, "location.equipSlot < arrsize(m_equipmentSlots)", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr+0x1A; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x200; }
+)
+
+
+OFFSET(uint8_t, equipItemDef, 0x38, "!oldDef || m_itemDef == oldDef", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return addr-0x2; } );
+    },
+    VERIFY_CB { return val >= 0x20 && val <= 0xA0; }
+)
+
+OFFSET(uint32_t, equipItemStats, 0x98, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint32_t, equipItemUpgrade, 0xB8, "", true, 0, 0,
+    ADDR_CBARR {},
+    VERIFY_CB { return true; }
+)
+
+OFFSET(uint8_t, equipItemVtGetSkin, 0x60, "item->GetSkinDef() != skinDef", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x8); } );
+        ADDR_CB( { return addr-0xB; } );
+    },
+    VERIFY_CB { return val >= 0x30 && val <= 0xB0; }
+)
+
+OFFSET(uint32_t, equipItemVtGetUpgrades, 0x208, "m_equipmentSlots[equipSlot] == NULL", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x40); } );
+        ADDR_CB( { return addr+0x8; } );
+    },
+    VERIFY_CB { return val >= 0x1A0 && val <= 0x2A0; }
+)
+
+/*OFFSET(uint32_t, contactCtxGetContact, 0x238, "playerId", true, 4, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddressAsm(addr+0xC, 1); } );
+        ADDR_CB( { return addr+0x3C; } );
+    },
+    VERIFY_CB { return val >= 0x1B0 && val <= 0x2B0; }
+)*/
+
+OFFSET(uint32_t, contactCtxGetContact, 0x238, "No valid case for switch variable 'attitude'", true, 0, 2,
+    ADDR_CBARR {
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0xE); } );
+        ADDR_CB( { return addr+0x10; } );
+    },
+    VERIFY_CB { return val >= 0x1B0 && val <= 0x2B0; }
+)
+
+OFFSET(uint32_t, contactCtxGetSelf, 0xE0, "!m_flags.TestBit(INSTANCE_CLIENT_BIT_PORTAL_REGISTERED)", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr-0xC); } );
+        ADDR_CB( { return hl::FollowRelativeAddress(addr+0x19); } );
+        ADDR_CB( { return addr+0x43; } );
+    },
+    VERIFY_CB { return val >= 0x80 && val <= 0x180; }
+)
+
+// search for "wvwContext"
+// scroll down to double call of            "call       qword [rax+0x310]"
+// 2nd function below is a function with    "lea        eax, dword [rdi-1]"
+// search for the above function reference, 4th and last assert
+OFFSET(uint32_t, contactGetAccountName, 0x138, "49 89 C7 41 BE 07 00 00 00", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0x4; } );
+    },
+    VERIFY_CB { return val >= 0x100 && val <= 0x200; }
+)
+
+
+OFFSET(uint8_t, wvctxVtGetMetrics, 0x78, "s_texLodIds.Count() == s_texLodDistances.Count()", true, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x3); } );
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x46); } );
+        ADDR_CB( { return addr-0xA; } );
+    },
+    VERIFY_CB { return val >= 0x40 && val <= 0x140; }
+)
+
+
+#if !(defined BGDM_TOS_COMPLIANT)
+/*===================================================================================
+0000000000e8410d 488D3D44136B01         lea        rdi, qword [0x2535458]       ; "character", argument #1 for method sub_1cae350, CODE XREF=sub_e83630+60
+0000000000e84114 488D35C1B56D01         lea        rsi, qword [0x255f6dc]       ; "/Users/buildsrv/Gw2/Live/NAEU/v2/Code/Gw2/Game/Ui/Widgets/AgentStatus/AsInfoBarFloating.cpp", argument #2 for method sub_1cae350
+0000000000e8411b BA7D050000             mov        edx, 0x57d                   ; argument #3 for method sub_1cae350
+0000000000e84120 E82BA2E200             call       sub_1cae350
+0000000000e84125 E948F5FFFF             jmp        loc_e83672
+===================================================================================*/
+OFFSET(uint8_t, ptrHPBarEnable, 0x75, "CD CC 4C 3D 41 C7 85", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return addr-0xE; } );
+    },
+    VERIFY_CB { return val == 0x75; }
+)
+
+OFFSET(uint16_t, ptrHPBarBrighten, 0xC085, "CD CC 4C 3D 0F 2E E0", false, 0, 0,
+    ADDR_CBARR {
+        ADDR_CB( { return g_scanner->findAddrRef(addr-0x31); } );
+        ADDR_CB( { return (addr-0x4); } );
+    },
+    VERIFY_CB { return val == 0xC085; }
+)
+#endif
